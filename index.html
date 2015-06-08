@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ship Name Generator</title>
+		<script type="text/javascript" src="js/jQuery.min.js"></script>
+	</head>
+	<body>
+		<form id="names">
+			<input type="text" class="name1" placeholder="Name 1">
+			<input type="text" class="name2" placeholder="Name 2">
+			<input type="submit">
+		</form>
+		<div id="name"></div>
+		<script type="text/javascript">
+			$("#names").submit(function(event)
+			{
+				var name1 = $( ".name1" ).val().split("");
+				var name2 = $( ".name2" ).val().split("");
+				$("#name").append($( ".name1" ).val() + " + " + $( ".name2" ).val() + " = ");
+				name2[0] = name2[0].toLowerCase();
+				var i = 0;
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if(name1[a] == name2[i])
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						$("#name").append(name2);
+						break;
+					}
+				}
+				$("#name").append(" ");
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if((name1[a] == "a" || name1[a] == "e" || name1[a] == "i" || name1[a] == "o" || name1[a] == "u") && (name2[0] == "a" || name2[0] == "e" || name2[0] == "i" || name2[0] == "o" || name2[0] == "u"))
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						$("#name").append(name2);
+						break;
+					}
+				}
+				$("#name").append(" ");
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if((name1[a] == "a" || name1[a] == "e" || name1[a] == "i" || name1[a] == "o" || name1[a] == "u"))
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						for(var c = 0; c<=name2.length; c++)
+						{
+							if(name2[c]==name1[a])
+							{
+								for(var d = c; d<=name2.length; d++)
+								{
+									$("#name").append(name2[d]);
+								}
+								break;
+							}
+						}
+						break;
+					}
+				}
+				$("#name").append(" ");
+				var name3 = name1;
+				var name4 = name2;
+				name2 = name3;
+				name1 = name4;
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if(name1[a] == name2[i])
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						$("#name").append(name2);
+						break;
+					}
+				}
+				$("#name").append(" ");
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if((name1[a] == "a" || name1[a] == "e" || name1[a] == "i" || name1[a] == "o" || name1[a] == "u") && (name2[0] == "a" || name2[0] == "e" || name2[0] == "i" || name2[0] == "o" || name2[0] == "u"))
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						$("#name").append(name2);
+						break;
+					}
+				}
+				$("#name").append(" ");
+				for(var a = 0; a<=name1.length; a++)
+				{
+					if((name1[a] == "a" || name1[a] == "e" || name1[a] == "i" || name1[a] == "o" || name1[a] == "u"))
+					{						
+						for(var b = 0; b<a; b++)
+						{
+							$("#name").append(name1[b]);
+						}
+						for(var c = 0; c<=name2.length; c++)
+						{
+							if(name2[c]==name1[a])
+							{
+								for(var d = c; d<=name2.length; d++)
+								{
+									$("#name").append(name2[d]);
+								}
+								break;
+							}
+						}
+						break;
+					}
+				}
+				$("#name").append("<br>");
+				event.preventDefault();
+			})
+		</script>
+	</body>	
+</html>
